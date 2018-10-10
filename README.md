@@ -19,7 +19,7 @@ Downloaded ~1000 pictures for "fish"  and 1000 pictures of "non-fish" queried fr
 
 Fish 						| Fish Eater (Non-fish) 
 :-------------------------:|:-------------------------:
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="600px" height="300px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="600px" height="525px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="600px" height="300px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="600px" height="400px"></img>
 
 
 ## Image Processing
@@ -37,7 +37,7 @@ Here's an example of an RGB Photo zoomed in to the pixel level
 courtesy of xaraxone.com
 
 <div align="Left">
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="600px" height="600px"></img> 
+    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="600px"></img> 
 </div>
 courtesy of xaraxone.com
 
@@ -48,12 +48,12 @@ Greyscaled Using PIL's 'L' Algorithm
 	L = R * 299/1000 + G * 587/1000 + B * 114/1000
 
 <div align="Left">
-    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png"></img> 
+    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png" width="600px" height="600px"></img> 
 </div>
 
 Fish Image Processing      |  Non-fish Image Processing
 :-------------------------:|:-------------------------:
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="600px" height="600px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="600px" height="600px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="600px" height="400px"></img>
 
 
 Logistic regression takes a 2d matrix as input, so each picture was flattened to a vector of length 1089 (33x33).
