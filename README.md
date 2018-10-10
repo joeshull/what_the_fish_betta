@@ -19,7 +19,7 @@ Downloaded ~1000 pictures for "fish"  and 1000 pictures of "non-fish" queried fr
 
 Fish 						| Fish Eater (Non-fish) 
 :-------------------------:|:-------------------------:
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="400px" height=200px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="400px" height="350px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="400px" height="200px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="400px" height="350px"></img>
 
 
 ## Image Processing
