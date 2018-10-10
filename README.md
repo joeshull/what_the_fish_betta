@@ -71,11 +71,11 @@ Talk about Google Image Query Bias
 
 -Graphic of Brightness distribution at a random pixel
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="1200px" height="685px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="1200px" height="600px"></img>
 This probability distribution at each pixel will inform the classifier
 
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="1200px" height="685px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="1200px" height="600px"></img>
 
 ## Classification Results
 
