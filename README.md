@@ -13,19 +13,19 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 Attempt a "fish or not-a-fish" classification using Logistic Regression using 33x33px grayscaled images on ~ 2000 pictures. 
 
 
-##Image Acquisition
+## Image Acquisition
 
 Downloaded ~1000 pictures for "fish" queried from Google Images
 
 <div align="Center">
-    <img src="readme_graphics/ex_fish.jpg" width="400px" height=200px"></img> 
+    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="400px" height=200px"></img> 
 </div>
 
 
 Downloaded ~1000 pictures from 200 different "non-fish" categories
 
 <div align="Center">
-    <img src="readme_graphics/ex_bear.jpg" width="400px" height="350px"></img> 
+    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="400px" height="350px"></img> 
 </div>
 
 
@@ -44,7 +44,7 @@ Here's an example of an RGB Photo zoomed in to the pixel level
 courtesy of xaraxone.com
 
 <div align="Center">
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="400px" height="400px"></img> 
+    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="400px" height="400px"></img> 
 </div>
 
 
@@ -54,7 +54,7 @@ Greyscaled Using PIL's 'L' Algorithm
 	L = R * 299/1000 + G * 587/1000 + B * 114/1000
 
 <div align="Center">
-    <img src="readme_graphics/gray_smile.png"></img> 
+    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png"></img> 
 </div>
 
 Fish Image                 |  Non-fish Image
@@ -67,16 +67,20 @@ Logistic regression takes a 2d matrix as input, so each picture was flattened to
 
 ## Image EDA
 
--Graphic of Average Fish
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage.png" width="400px" height=200px"></img> 
+
+
 Talk about Google Image Query Bias
 
--Insert Fish Photo, Stock Photo
+
 
 -Graphic of Brightness distribution at a random pixel
+
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="400px" height=200px"></img>
 This probability distribution at each pixel will inform the classifier
 
 
--GIF of prob distribution at each pixel
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="400px" height=200px"></img>
 
 ## Classification Results
 
@@ -88,4 +92,5 @@ White_fish Classify
 
 ## Conclusion
 
+https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/AvgImage.png?raw=true
 
