@@ -124,6 +124,8 @@ def plot_kdes(X1, X2, pixel, ax1, ax_f, ax_nf):
 	y2 = x2k.pdf(x_range)
 	ax1.plot(x_range, y1, label='Fish Picture')
 	ax1.plot(x_range, y2, label='Non-Fish Picture')
+	ax1.axvline(np.mean(X1[:,pixel]),ymin=0,ymax=1, color='Blue', linestyle='--', linewidth=.75, label='Fish Expected Value')
+	ax1.axvline(np.mean(X2[:,pixel]),ymin=0,ymax=1, color='Red',linestyle='--', linewidth=.75, label='Non-Fish Expected Value')
 	ax1.set_xticks([0,128,255])
 	ax1.set_xticklabels(['Black','Gray' ,'White'])
 	ax1.set_ylim(bottom=0.00, top=0.0125)
