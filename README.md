@@ -15,18 +15,11 @@ Attempt a "fish or not-a-fish" image classification with Logistic Regression tra
 
 ## Image Acquisition
 
-Downloaded ~1000 pictures for "fish" queried from Google Images
+Downloaded ~1000 pictures for "fish"  and 1000 pictures of "non-fish" queried from 200 ImageNet categories 
 
-<div align="Left">
-    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="400px" height=200px"></img> 
-</div>
-
-
-Downloaded ~1000 pictures from 200 different "non-fish" categories
-
-<div align="Left">
-    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="400px" height="350px"></img> 
-</div>
+Fish      | Fish Eater (Non-fish)
+:-------------------------:|:-------------------------:
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="400px" height=200px"></img>|<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="400px" height="350px"></img>
 
 
 ## Image Processing
@@ -58,7 +51,7 @@ Greyscaled Using PIL's 'L' Algorithm
     <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png"></img> 
 </div>
 
-Fish Image                 |  Non-fish Image
+Fish Image Processing      |  Non-fish Image Processing
 :-------------------------:|:-------------------------:
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="400px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="400px" height="400px"></img>
 
