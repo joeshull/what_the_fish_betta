@@ -78,7 +78,7 @@ Talk about Google Image Query Bias
 
 -Graphic of Brightness distribution at a random pixel
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="800px" height="400px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="800px" height="600px"></img>
 This probability distribution at each pixel will inform the classifier
 
 
@@ -89,7 +89,7 @@ This probability distribution at each pixel will inform the classifier
 
 ROC & AUC            |  Confusion Matrix
 :-------------------------:|:-------------------------:
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="400px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="600px" height="400px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="600px" height="400px"></img>
 
 ROC Curve
 
