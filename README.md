@@ -68,7 +68,7 @@ Logistic regression takes a 2d matrix as input, so each picture was flattened to
 
 ## Image EDA
 <div align="Center">
-	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage.png" width="400px" height="200px"></img> 
+	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="400px" height="200px"></img> 
 </div>
 
 
