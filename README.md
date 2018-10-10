@@ -87,9 +87,13 @@ This probability distribution at each pixel will inform the classifier
 ## Classification Results
 
 ROC Curve
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="400px" height="400px"></img>
 Confusion Matrix
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="400px" height="400px"></img>
 Min/Max fish
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="400px" height="400px"></img>
 White_fish Classify
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/not_fish.png" width="400px" height="400px"></img>
 
 
 ## Conclusion
