@@ -44,8 +44,9 @@ Here's an example of an RGB Photo zoomed in to the pixel level
 courtesy of xaraxone.com
 
 <div align="Center">
-    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="400px" height="400px"></img> 
+    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="400px" height="400px"></img> 
 </div>
+courtesy of xaraxone.com
 
 
 I wanted to eliminate color as a variable to see if the classifier could simply identify some shape in the image. To do that I used PIL's "L" algoright to convert the image to grayscale and de facto provide us with a 2D matrix.
@@ -56,11 +57,11 @@ Greyscaled Using PIL's 'L' Algorithm
 <div align="Center">
     <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png"></img> 
 </div>
-
+<div align="Center">
 Fish Image                 |  Non-fish Image
 :-------------------------:|:-------------------------:
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="200px" height="200px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="200px" height="200px"></img>
-
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="400px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="400px" height="400px"></img>
+</div>
 
 Logistic regression takes a 2d matrix as input, so each picture was flattened to a vector of length 1089 (33x33).
 
@@ -77,11 +78,11 @@ Talk about Google Image Query Bias
 
 -Graphic of Brightness distribution at a random pixel
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="400px" height="200px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="800px" height="400px"></img>
 This probability distribution at each pixel will inform the classifier
 
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="400px" height="200px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="800px" height="400px"></img>
 
 ## Classification Results
 
