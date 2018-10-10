@@ -36,7 +36,7 @@ The images I downloaded started as RGB images in either JPEG or PNG form.
 Here's an example of an RGB Photo zoomed in to the pixel level
 
 <div align="Center">
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif  " width="400px" height="400px"></img> 
+    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="400px" height="400px"></img> 
 </div>
 
 
@@ -59,15 +59,16 @@ Greyscaled Using PIL's 'L' Algorithm
 
 Fish Image                 |  Non-fish Image
 :-------------------------:|:-------------------------:
-<img src="readme_graphics/fish_proc.png" width="200px" height=200px"></img>   |  <img src="readme_graphics/nfish_proc.png" width="200px" height=200px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="200px" height="200px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="200px" height="200px"></img>
 
 
 Logistic regression takes a 2d matrix as input, so each picture was flattened to a vector of length 1089 (33x33).
 
 
 ## Image EDA
-
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage.png" width="400px" height=200px"></img> 
+<div align="Center">
+	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage.png" width="400px" height="200px"></img> 
+</div>
 
 
 Talk about Google Image Query Bias
@@ -76,11 +77,11 @@ Talk about Google Image Query Bias
 
 -Graphic of Brightness distribution at a random pixel
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="400px" height=200px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="400px" height="200px"></img>
 This probability distribution at each pixel will inform the classifier
 
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="400px" height=200px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="400px" height="200px"></img>
 
 ## Classification Results
 
@@ -92,5 +93,5 @@ White_fish Classify
 
 ## Conclusion
 
-https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/AvgImage.png?raw=true
+
 
