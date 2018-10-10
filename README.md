@@ -68,7 +68,7 @@ Logistic regression takes a 2d matrix as input, so each picture was flattened to
 
 ## Image EDA
 <div align="Left">
-	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="400px" height="200px"></img> 
+	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="800px" height="400px"></img> 
 </div>
 
 
@@ -86,17 +86,22 @@ This probability distribution at each pixel will inform the classifier
 
 ## Classification Results
 
+
+ROC & AUC            |  Confusion Matrix
+:-------------------------:|:-------------------------:
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="400px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="600px" height="400px"></img>
+
 ROC Curve
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="400px" height="400px"></img>
+
 
 Confusion Matrix
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="400px" height="500px"></img>
+
 
 Min/Max fish
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="600px" height="400px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="800px" height="600px"></img>
 
 White_fish Classify
 
