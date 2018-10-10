@@ -57,11 +57,11 @@ Greyscaled Using PIL's 'L' Algorithm
 <div align="Center">
     <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png"></img> 
 </div>
-<div align="Center">
+
 Fish Image                 |  Non-fish Image
 :-------------------------:|:-------------------------:
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="400px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="400px" height="400px"></img>
-</div>
+
 
 Logistic regression takes a 2d matrix as input, so each picture was flattened to a vector of length 1089 (33x33).
 
