@@ -10,7 +10,7 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 
 
 ## Goals
-Attempt a "fish or not-a-fish" classification using Logistic Regression using 33x33px grayscaled images on ~ 2000 pictures. 
+Attempt a "fish or not-a-fish" image classification with Logistic Regression trained on ~1500 33x33px grayscaled images.
 
 
 ## Image Acquisition
@@ -87,13 +87,20 @@ This probability distribution at each pixel will inform the classifier
 ## Classification Results
 
 ROC Curve
+
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="400px" height="400px"></img>
+
 Confusion Matrix
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="400px" height="400px"></img>
+
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="400px" height="500px"></img>
+
 Min/Max fish
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="400px" height="400px"></img>
+
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="600px" height="400px"></img>
+
 White_fish Classify
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/not_fish.png" width="400px" height="400px"></img>
+
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/not_fish.png" width="600px" height="400px"></img>
 
 
 ## Conclusion
