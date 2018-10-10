@@ -1,4 +1,5 @@
-# What The Fish (Beta)
+# What The Fish (Beta) 
+--- ***
 An exploration in image classification using Logistic Regression
 
 Tools: [Python , Numpy, Python Image Library, SKLearn]
@@ -16,13 +17,16 @@ Attempt a "fish or not-a-fish" classification using Logistic Regression using 33
 
 Downloaded ~1000 pictures for "fish" queried from Google Images
 
- <img src="readme_graphics/ex_fish.jpg" width="400px"height="200px"</img> 
+<div align="Center">
+    <img src="readme_graphics/ex_fish.jpg" width="400px" height=200px"></img> 
+</div>
+
 
 Downloaded ~1000 pictures from 200 different "non-fish" categories
 
-<!-- <div align="Center">
-    <img src="readme_graphics/ex_bear.jpg" width="400px" height="400px"</img> 
-</div> -->
+<div align="Center">
+    <img src="readme_graphics/ex_bear.jpg" width="400px" height="350px"></img> 
+</div>
 
 
 ## Image Processing
@@ -31,28 +35,32 @@ The images I downloaded started as RGB images in either JPEG or PNG form.
 
 Here's an example of an RGB Photo zoomed in to the pixel level
 
-<!-- <div align="Center">
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif  " width="400px" height="400px"</img> 
-</div> -->
+<div align="Center">
+    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif  " width="400px" height="400px"></img> 
+</div>
 
 
 
 courtesy of xaraxone.com
 
-typping more stuff
+<div align="Center">
+    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="400px" height="400px"></img> 
+</div>
 
--Graphic of photo zoomed in - http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif  
-
--Graphic of RGB -  http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif
 
 I wanted to eliminate color as a variable to see if the classifier could simply identify some shape in the image. To do that I used PIL's "L" algoright to convert the image to grayscale and de facto provide us with a 2D matrix.
 
 Greyscaled Using PIL's 'L' Algorithm
-L = R * 299/1000 + G * 587/1000 + B * 114/1000
+	L = R * 299/1000 + G * 587/1000 + B * 114/1000
 
--Graphic of grayscaled, smiley face
+<div align="Center">
+    <img src="readme_graphics/gray_smile.png"></img> 
+</div>
 
-Resized with PIL's Nearest Neighbor
+Fish Image                 |  Non-fish Image
+:-------------------------:|:-------------------------:
+<img src="readme_graphics/fish_proc.png" width="200px" height=200px"></img>   |  <img src="readme_graphics/nfish_proc.png" width="200px" height=200px"></img>
+
 
 Logistic regression takes a 2d matrix as input, so each picture was flattened to a vector of length 1089 (33x33).
 
