@@ -19,7 +19,7 @@ Downloaded ~1000 pictures for "fish"  and 1000 pictures of "non-fish" queried fr
 
 Fish 						| Fish Eater (Non-fish) 
 :-------------------------:|:-------------------------:
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="400px" height="200px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="400px" height="350px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="600px" height="300px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="600px" height="525px"></img>
 
 
 ## Image Processing
@@ -29,7 +29,7 @@ The images I downloaded started as RGB images in either JPEG or PNG form.
 Here's an example of an RGB Photo zoomed in to the pixel level
 
 <div align="Left">
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="400px" height="400px"></img> 
+    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="600px"></img> 
 </div>
 
 
@@ -37,7 +37,7 @@ Here's an example of an RGB Photo zoomed in to the pixel level
 courtesy of xaraxone.com
 
 <div align="Left">
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="400px" height="400px"></img> 
+    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_01.gif" width="600px" height="600px"></img> 
 </div>
 courtesy of xaraxone.com
 
@@ -53,7 +53,7 @@ Greyscaled Using PIL's 'L' Algorithm
 
 Fish Image Processing      |  Non-fish Image Processing
 :-------------------------:|:-------------------------:
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="400px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="400px" height="400px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="600px" height="600px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="600px" height="600px"></img>
 
 
 Logistic regression takes a 2d matrix as input, so each picture was flattened to a vector of length 1089 (33x33).
@@ -61,7 +61,7 @@ Logistic regression takes a 2d matrix as input, so each picture was flattened to
 
 ## Image EDA
 <div align="Left">
-	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="800px" height="400px"></img> 
+	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
 </div>
 
 
@@ -71,11 +71,11 @@ Talk about Google Image Query Bias
 
 -Graphic of Brightness distribution at a random pixel
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="800px" height="600px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="1200px" height="800px"></img>
 This probability distribution at each pixel will inform the classifier
 
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="800px" height="400px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="1200px" height="800px"></img>
 
 ## Classification Results
 
@@ -94,11 +94,11 @@ Confusion Matrix
 
 Min/Max fish
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="800px" height="600px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="1200px" height="800px"></img>
 
 White_fish Classify
 
-<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/not_fish.png" width="600px" height="400px"></img>
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/not_fish.png" width="1200px" height="800px"></img>
 
 
 ## Conclusion
