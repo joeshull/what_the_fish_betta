@@ -20,7 +20,7 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 		Convert all images to grayscale, resize to 33x33px, convert to integer array, and flatten to vector
 **[Image EDA][c]:** 
 
-		Understand the parameters of a grayscale image and how the classifier will see the distributions of each feature
+		Understand the distributions of the pixels and what the classifier will see. 
 **[Logistic Regression Training][d]** 
 
 		Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
