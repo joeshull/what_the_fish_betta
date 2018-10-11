@@ -17,18 +17,16 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 
 **[Image Processing][b]:**
 
-		a. Convert all images to grayscale and resize to 33x33px. 
-		b. Convert to integer array and flatten to vector
+		Convert all images to grayscale, resize to 33x33px, convert to integer array, and flatten to vector
 **[Image EDA][c]:** 
 
-		a. Understand the parameters of a grayscale image and 
-		b. How the classifier will use the probability distributions of each feature
+		Understand the parameters of a grayscale image and how the classifier will see the distributions of each feature
 **[Logistic Regression Training][d]** 
 
 		Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
 **[Classification Results][e]** 
 
-		A report on the results on a holdout set of 500 images.
+		Report the results on a holdout set of 500 images.
 
 
 Now that we have a high-level view of the plan, let's dive in! (don't worry, these fish don't bite).
@@ -47,6 +45,7 @@ Fish 						| Fish Eater (Non-fish)
 
 
 ## 2. Image Processing
+[b]: #ImageProcessing 'Image Processing guide'
 
 The images I downloaded started as RGB images in either JPEG or PNG form.
 
@@ -78,6 +77,7 @@ Logistic regression takes a 2d matrix as input, so each Image was flattened to a
 
 
 ## 3. Image EDA
+[c]: #ImageEDA 'Image EDA guide'
 <div align="Left">
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
 </div>
@@ -104,7 +104,12 @@ On the right, I've applied a mask at median (gray-128) to see exactly which pixe
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="1200px" height="600px"></img>
 
 
-## Training and Classification Results
+## Logistic Regression Training
+[d]: #Logistic 'A quick guide to Logistic Regression'
+
+
+## Classification Result
+[e]: #Results 'A report on the Logistic Regresion model results'
 
 Since our data is clean
 
