@@ -12,7 +12,8 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 ## Goal and Methods
 Attempt a "fish or not-a-fish" image classification with Logistic Regression.
 
-####Methods	
+#### Methods	
+
 	1. Create an equally balanced image set of "Fish" and "Non-Fish" images.
 	2. Convert all images to grayscale and resize to 33x33px.
 	3. Convert images to array and flatten to vector.
