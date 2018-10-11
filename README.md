@@ -17,13 +17,14 @@ Attempt a "fish or not-a-fish" image classification with Logistic Regression.
 	1. Create an equally balanced image set of "Fish" and "Non-Fish" images.
 	2. Convert all images to grayscale and resize to 33x33px.
 	3. Convert images to array and flatten to vector.
-	4. Train SKLearn's Logistic Regressor with 1500 images and then report results on a holdout set of 500 pictures.
+	4. Train SKLearn's Logistic Regressor with 1500 images.
+	5. Report results on a holdout set of 500 images.
 
 
 
 ## Image Acquisition
 
-Downloaded ~1000 pictures for "fish"  and 1000 pictures of "non-fish" queried from 200 ImageNet categories 
+Downloaded ~1000 images for "fish"  and 1000 images of "non-fish" queried from 200 ImageNet categories 
 
 Fish 						| Fish Eater (Non-fish) 
 :-------------------------:|:-------------------------:
@@ -36,7 +37,7 @@ The images I downloaded started as RGB images in either JPEG or PNG form.
 
 	Here's an example of an RGB Photo zoomed in to the pixel level
 
-RGB Picture Pixels			| RGB Pixels as Integer Values
+RGB Image Pixels			| RGB Pixels as Integer Values
 :-------------------------:|:-------------------------:
 <a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="400px"></img></a>|<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="400px"></img></a>
 
@@ -58,7 +59,7 @@ Fish Image Processing      |  Non-fish Image Processing
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="600px" height="400px"></img>
 
 
-Logistic regression takes a 2d matrix as input, so each picture was flattened to a vector of length 1089 (33x33).
+Logistic regression takes a 2d matrix as input, so each Image was flattened to a vector of length 1089 (33x33).
 
 
 ## Image EDA
