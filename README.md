@@ -11,22 +11,22 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 
 ## How the Fish?
 
-**[Image Acquisition][a]:** Create a balanced set of "Fish" and "Non-Fish" images.
+**[Image Acquisition][acq]:** Create a balanced set of "Fish" and "Non-Fish" images.
 
-**[Image Processing][b]:** Convert images to a format compatible with Logistic Regression.
+**[Image Processing][proc]:** Convert images to a format compatible with Logistic Regression.
 
-**[Image EDA][c]:** Explore the features and what the classifier will see. 
+**[Image EDA][eda]:** Explore the features and what the classifier will see. 
 
-**[Logistic Regression Training][d]:** Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
+**[Logistic Regression Training][log]:** Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
 
-**[Classification Results][e]:** Report the results on a holdout set of 500 images.
+**[Classification Results][res]:** Report the results on a holdout set of 500 images.
 
 
 Now that we have a high-level view of the plan, let's dive in! (don't worry, these fish don't bite).
 
 
 ## 1. Image Acquisition
-[a]: #ImageAcquisition 'Image Acquistion guide'
+[acq]: #ImageAcquisition 'Image Acquistion guide'
 
 In order to create my equally valances
 
@@ -38,7 +38,7 @@ Fish 						| Fish Eater (Non-fish)
 
 
 ## 2. Image Processing
-[b]: #ImageProcessing 'Image Processing guide'
+[proc]: #ImageProcessing 'Image Processing guide'
 
 The images I downloaded started as RGB images in either JPEG or PNG form.
 
@@ -70,7 +70,7 @@ Logistic regression takes a 2d matrix as input, so each Image was flattened to a
 
 
 ## 3. Image EDA
-[c]: #ImageEDA 'Image EDA guide'
+[eda]: #ImageEDA 'Image EDA guide'
 <div align="Left">
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
 </div>
@@ -98,11 +98,11 @@ On the right, I've applied a mask at median (gray-128) to see exactly which pixe
 
 
 ## Logistic Regression Training
-[d]: #Logistic 'A quick guide to Logistic Regression'
+[log]: #Logistic 'A quick guide to Logistic Regression'
 
 
 ## Classification Result
-[e]: #Results 'A report on the Logistic Regresion model results'
+[res]: #Results 'A report on the Logistic Regresion model results'
 
 Since our data is clean
 
