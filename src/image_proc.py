@@ -1,5 +1,3 @@
-from pathlib import Path
-from sys import argv
 import os
 import time
 from PIL import Image
