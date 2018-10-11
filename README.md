@@ -36,6 +36,7 @@ Now that we have a high-level view of the plan, let's dive in! (don't worry, the
 In order to create my equally balanced classes I wrote an <a href="">image scraping script</a> that leverages the <a href="">Google Images Download</a> tool built by hardikvasa.
 
 The Fish Class: Query Google Images for "fish" and download 1000 of the top results. Easy-peasy.
+	
 	'code here'
 
 The Non-Fish class: Query approx. <a href="https://planspace.org/20170430-sampling_imagenet/">200 "non-fish"</a> categories ranked according to the ImageNet database. 
@@ -54,16 +55,16 @@ Fish 						| Non-Fish (fish eater)
 In general, the images arrived as an RGB image in JPG or PNG format. 
 
 Numerically speaking, RGB images are 3D matrices with shape: 
-*Width: columns|
+**Width: columns|
 Height: rows|
-Depth:  3*
+Depth:  3**
 
-The Height and Width give you the number of pixels in each dimension. More pixels in each dimension results in a larger picture and higher resolution (pixels per inch) when scale is held constant. 
+The *Height* and *Width* give us the number of pixels in each dimension. More pixels in each dimension results in a larger picture and higher resolution (pixels per inch) when scale is held constant. 
 
-The Depth is the color brightness values for each color: Red, Green, Blue. The values can take
+The *Depth* of 3 gives us three 2D matrices to store the color brightness values for each color (Red, Green, Blue) at each pixel. The values can take
 any value from 0 to 255, and their combinations result in over 16-million colors.
 
-	Here's an example of an RGB Photo zoomed in to the pixel level
+Here's an example of an RGB Photo zoomed in to the pixel level
 
 RGB Image Pixels			| RGB Pixels as Integer Values
 :-------------------------:|:-------------------------:
@@ -75,17 +76,15 @@ I wanted to eliminate color as a variable in order to give the classifier an eas
 *Greyscaling Using PIL's 'L' Algorithm*
 	
 	Gray = R * 299/1000 + G * 587/1000 + B * 114/1000
+<div align="Center">
+    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png" width="300px" height="300px"></img> 
+</div>
 
 
 Converting to grayscale allows us to do a couple things:
 1. Simplify the classification to shape and lighting only
 2. Maintain some semblance of sampling density (RGB features at 33px = 3267)
 
-
-
-<div align="Center">
-    <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png" width="300px" height="300px"></img> 
-</div>
 
 #### Resizing
 Once grayscaled, the images were resized to a fixed image size (33x33px). Creating a fixed image size keeps the pixel space consistent at 1089 total pixels.
@@ -113,18 +112,26 @@ Below is a plot that shows the mean of all pixels for both classes.
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
 </div>
 
+Let's take a look at the distribution of values for a random pixel. Pixel 496 is about halfway down the picture and 1 pixel in from the left.
+
+The upper right and left plots are the "average" pictures from before. On the bottom is the Kernel Density Estimation (KDE) for both classes at pixel 496. Here we can see the probability distribution of this pixel and the Expected Value (mean value) at that pixel. 
+
+Now in English: At pixel 496, "Fish" images have a mean value of ~110 (gray) and we can see the mode takes a value around ~90. "Non-fish" images at this pixel have an expected value closer to 190 (light-gray) with the mode >225. 
+
+The probability of an image being labeled "fish" will decrease as pixel intensity increases at Pixel 496. 
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="1200px" height="600px"></img>
-This probability distribution at each pixel will inform the classifier
 
 What does it look like if we subtract the means from each other to find the biggest difference? E.g. If at Pixel 515, the means of both classes are similar at (128) the difference would be 0. Similarly, if the one class is, on average, a dark gray (75) but the other is brighter, we would see a large difference. 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/histpixdif.png" width="1200px" height="600px"></img>
 
 Once we net the images at each pixel, we can normalize and rescale them back to our 0-255 values for image rendering. Below we can see the biggest differences between the two images are at the edges. This makes sense since our fish images are generally grayish across the pixel space, while the non-fish images have a strong white border at the edges.
 
-On the right, I've applied a mask at median (gray-128) to see exactly which pixels will give the classifier the strongest signal. The white pixels have a difference 
+On the right, I've applied a mask at median (gray-128) to see exactly which pixels will give the classifier the strongest signal.
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/netimage.png" width="1200px" height="600px"></img>
 
+
+Now that we see where the classifier will be getting the strongest signal, let's visualize this across the pixel space. Watch where the dotted "Expected Value" lines get farthest apart *(Hint: It's at the edges as we saw earlier)*
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="1200px" height="600px"></img>
 
