@@ -22,7 +22,7 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 
 **[Image EDA](#image-eda):** Explore the features and what the classifier will see. 
 
-**[Logistic Regression Training](#logistic-regression-training):** Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
+**[Logistic Regression](#logistic-regression):** Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
 
 **[Classification Results](#classification-results):** Report the results on a holdout set of 500 images.
 
@@ -106,7 +106,7 @@ Below is a plot that shows the mean of all pixels for both classes.
 
 *On the left*, the mean "fish" appears to be of medium light on the borders with a lighter shading in the middle. If you squint, it might even look like a underwater phot of a fish. 
 
-*On the right*, the mean "non-fish" picture appears to have a white border with some object of focus located directly in the center. Google Images seems to favor stock photos (objects on white background) for the first several images in a query. The webscraping script queried 200 words and pulled 5-6 images for each. As you can see, we probably have large amount of stock photos.
+*On the right*, the mean "non-fish" picture appears to have a white border with some object of focus located directly in the center. Google Images seems to favor stock photos (objects on white background) for the first several images in a query. The webscraping script queried 200 words and pulled 5-6 images for each. As you can see, we probably have a large amount of stock photos.
 
 <div align="Left">
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
@@ -114,18 +114,20 @@ Below is a plot that shows the mean of all pixels for both classes.
 
 Let's take a look at the distribution of values for a random pixel. Pixel 496 is about halfway down the picture and 1 pixel in from the left.
 
-The upper right and left plots are the "average" pictures from before. On the bottom is the Kernel Density Estimation (KDE) for both classes at pixel 496. Here we can see the probability distribution of this pixel and the Expected Value (mean value) at that pixel. 
+The upper right and left plots are the "average" pictures from before. On the bottom is the Kernel Density Estimation (KDE) for both classes at pixel 496. Here we can see the probability distribution of this pixel and the Expected Value (mean) at that pixel. 
 
-Now in English: At pixel 496, "Fish" images have a mean value of ~110 (gray) and we can see the mode takes a value around ~90. "Non-fish" images at this pixel have an expected value closer to 190 (light-gray) with the mode >225. 
+Now in English: At pixel 496, "Fish" images have an expected intensity of ~110 intensity (gray) and we can see the mode takes a value around ~90. "Non-fish" images at this pixel have an expected intensity closer to 190 (light-gray) with the mode >225. 
 
-The probability of an image being labeled "fish" will decrease as pixel intensity increases at Pixel 496. 
+The probability of an image being labeled "fish" will decrease as intensity increases at Pixel 496. 
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/pixel_brightness.png" width="1200px" height="600px"></img>
 
-What does it look like if we subtract the means from each other to find the biggest difference? E.g. If at Pixel 515, the means of both classes are similar at (128) the difference would be 0. Similarly, if the one class is, on average, a dark gray (75) but the other is brighter, we would see a large difference. 
+What does it look like if we subtract the means from each other to find the biggest difference in intensity? E.g. at Pixel 496, the difference between the classes is (~80). 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/histpixdif.png" width="1200px" height="600px"></img>
 
-Once we net the images at each pixel, we can normalize and rescale them back to our 0-255 values for image rendering. Below we can see the biggest differences between the two images are at the edges. This makes sense since our fish images are generally grayish across the pixel space, while the non-fish images have a strong white border at the edges.
+Once we net the images at each pixel, we can normalize and rescale them back to our 0-255 values for image rendering. 
+
+Below we can see the biggest differences between the two images are at the edges. This makes sense since our fish images are generally grayish across the pixel space, while the non-fish images have a strong white border at the edges.
 
 On the right, I've applied a mask at median (gray-128) to see exactly which pixels will give the classifier the strongest signal.
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/netimage.png" width="1200px" height="600px"></img>
@@ -136,9 +138,24 @@ Now that we see where the classifier will be getting the strongest signal, let's
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="1200px" height="600px"></img>
 
 
-## Logistic Regression Training
+## Logistic Regression
+
+<a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a> is similar to Linear Regression: modeling a dependent variable to the modulation in independent variables. 
+While Linear Regression models a continuous output to continuous input
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8119b3ed1259aa8ff15166488548104b50a0f92e"></img>
+
+The Logistic Regressor models the "Log Odds" (0 and 1) as output to continuous input.
+
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21135f8ddca09553a884ea00e7502d9c3f624385.svg"></img>
+
+The interpretation of the coefficients is similar. In our case, the coefficients should take negative values. 
 
 
+
+As we saw in Image EDA, the probability of an image being a "fish" decreases as pixel intensity increases.
+
+
+For a more in-depth explanation on Logistic Regression, check out this article and the wiki.
 https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc
 
 
