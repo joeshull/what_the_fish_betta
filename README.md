@@ -69,7 +69,7 @@ RGB Image Pixels			| RGB Pixels as Integer Values
 :-------------------------:|:-------------------------:
 <a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="400px"></img></a>|<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="400px"></img></a>
 
-**Grayscaling**
+#### Grayscaling
 I wanted to eliminate color as a variable in order to give the classifier an easier task - identify shape or shading. To do that I used PIL's "L" algorithm to convert the image to grayscale (0-255) and de facto provide us with a 2D matrix.
 
 *Greyscaling Using PIL's 'L' Algorithm*
@@ -87,7 +87,7 @@ Converting to grayscale allows us to do a couple things:
     <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png" width="300px" height="300px"></img> 
 </div>
 
-**Resizing**
+#### Resizing
 Once grayscaled, the images were resized to a fixed image size (33x33px). Creating a fixed image size keeps the pixel space consistent at 1089 total pixels.
 
 The image size was picked by visually testing smallest picture size that my human eye could accurately identify a "fish" or "non-fish". 
@@ -101,13 +101,13 @@ Logistic regression takes a 2d matrix as input, so each Image was flattened to a
 
 
 ## Image EDA
-
 With all images converted to a 2D, we can start to explore the classes and their features.
 
 Below is a plot that shows the mean of all pixels for both classes. 
-On the left, the mean "fish" appears to be of medium light on the borders with a lighter shading in the middle. If you squint, it might even look like a underwater phot of a fish. 
 
-On the right, the mean "non-fish" picture appears to have a white border with some object of focus located directly in the center. Google Images seems to favor stock photos (objects on white background) for the first several images in a query. The webscraping script queried 200 words and pulled 5-6 images for each. As you can see, we probably have large amount of stock photos.
+*On the left*, the mean "fish" appears to be of medium light on the borders with a lighter shading in the middle. If you squint, it might even look like a underwater phot of a fish. 
+
+*On the right*, the mean "non-fish" picture appears to have a white border with some object of focus located directly in the center. Google Images seems to favor stock photos (objects on white background) for the first several images in a query. The webscraping script queried 200 words and pulled 5-6 images for each. As you can see, we probably have large amount of stock photos.
 
 <div align="Left">
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
