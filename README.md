@@ -30,7 +30,7 @@ Here's an example of an RGB Photo zoomed in to the pixel level
 
 RGB Picture Pixels			| RGB Pixels as Integer Values
 :-------------------------:|:-------------------------:
-<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="600px"></img></a>|<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="600px"></img></a>
+<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="400px"></img></a>|<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="400px"></img></a>
 
 
 
