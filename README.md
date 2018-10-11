@@ -11,17 +11,17 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 
 #### How the Fish?
 
-	**[Image Acquisition][a]:** 
+**[Image Acquisition][a]:** 
 		Create an equally balanced image set of "Fish" and "Non-Fish" images by webscraping Google Images.
-	**[Image Processing][b]: ** 
+**[Image Processing][b]: ** 
 		a. Convert all images to grayscale and resize to 33x33px. 
 		b. Convert to integer array and flatten to vector
-	**[Image EDA][c]: ** 
+**[Image EDA][c]: ** 
 		a. Understand the parameters of a grayscale image and 
 		b. How the classifier will use the probability distributions of each feature
-	**[Logistic Regression Training][d]** 
+**[Logistic Regression Training][d]** 
 		Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
-	**[Classification Results][e]** 
+**[Classification Results][e]** 
 		A report on the results on a holdout set of 500 images.
 
 
