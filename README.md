@@ -11,22 +11,15 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 
 ## How the Fish?
 
-**[Image Acquisition][a]:** 
+**[Image Acquisition][a]:** Create a balanced set of "Fish" and "Non-Fish" images.
 
-		Create an equally balanced image set of "Fish" and "Non-Fish" images by webscraping Google Images.
+**[Image Processing][b]:** Convert images to a format compatible with Logistic Regression.
 
-**[Image Processing][b]:**
+**[Image EDA][c]:** Explore the features and what the classifier will see. 
 
-		Convert all images to grayscale, resize to 33x33px, convert to integer array, and flatten to vector
-**[Image EDA][c]:** 
+**[Logistic Regression Training][d]:** Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
 
-		Understand the distributions of the pixels and what the classifier will see. 
-**[Logistic Regression Training][d]** 
-
-		Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
-**[Classification Results][e]** 
-
-		Report the results on a holdout set of 500 images.
+**[Classification Results][e]:** Report the results on a holdout set of 500 images.
 
 
 Now that we have a high-level view of the plan, let's dive in! (don't worry, these fish don't bite).
