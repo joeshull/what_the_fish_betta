@@ -39,19 +39,6 @@ RGB Picture Pixels			| RGB Pixels as Integer Values
 :-------------------------:|:-------------------------:
 <a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="400px"></img></a>|<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="400px"></img></a>
 
-
-
-
-courtesy of xaraxone.com
-
-
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="600px"></img> 
-
-courtesy of xaraxone.com
-
-
-
-
 I wanted to eliminate color as a variable to see if the classifier could simply identify some shape in the image. To do that I used PIL's "L" algorithm to convert the image to grayscale (0-255) and de facto provide us with a 2D matrix.
 
 Converting to grayscale allows us to do a couple things:
@@ -129,7 +116,9 @@ White_fish Classify
 #### References and Resources
 http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif
 http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif
+
 https://github.com/hardikvasa/google-images-download
+
 https://planspace.org/20170430-sampling_imagenet/
 
 
