@@ -8,13 +8,47 @@ from sklearn.model_selection import train_test_split
 from plot_helper import*
 
 
+class FishClassify(object):
+	"""
+	Instantiate this model with data, target, 
+	and an SKLearn classifier (default = LogisticRegression).
+
+	Run .fit to get a fitted model.
+
+	Inputs:
+		X: a 2-d array
+		y: a 1-d array of 0-1 labels with same length as X
+		model: (optional) An SKLearn Classification Object.
+
+	Methods:
+	fit: returns a fitted model object
+	classify photo: returns the classification probability of a photo 
+	"""
 
 
 
-def classify_photo(file_path, model):
-	photo_fish = np.array(Image.open(file_path).convert('L').resize((33,33))).ravel().reshape(1,-1)
-	prob = model.predict_proba(photo_fish)
-	print(prob)
+	def __init__(self, X, y, model=LogisticRegression()):
+		self.X = X
+		self.y = y
+		self.model = model
+
+	def fit(self):
+		"""
+		Inputs: None
+		Outputs: A fitted SKLearn Model
+		"""
+		self.model = self.model.fit(self.X, self.y)
+		return self.model
+
+
+	def classify_photo(self,file_path):
+		"""
+		Inputs: A string path to image file.
+		Outputs: The binary classification probability
+		"""
+		photo_fish = np.array(Image.open(file_path).convert('L').resize((33,33))).ravel().reshape(1,-1)
+		prob = self.model.predict_proba(photo_fish)
+		print(prob)
 
 
 if __name__ == '__main__':
@@ -40,16 +74,16 @@ if __name__ == '__main__':
 	X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
 	#Fit
-	model = LogisticRegression()
-	model = model.fit(X_train, y_train)
+	fishmodel = FishClassify(X_train, y_train)
+	fishmodel = fishmodel.fit()
 
 	# # # Classify a stock photo of a fish.
 	# # #----------------------------------
 	# classify_photo('../images/fish_white.jpg', model)
 
 
-	# ##Plot KDEs for a chosen pixel on each class
-	# ###---------------------------------
+	##Plot KDEs for a chosen pixel on each class
+	###---------------------------------
 	# for i in range(1089):
 	# 	fig = plt.figure(figsize=(16,8))
 	# 	ax = fig.add_subplot(212)
@@ -58,6 +92,43 @@ if __name__ == '__main__':
 	# 	plot_kdes(X_fish, X_nfish, i, ax, ax1, ax2)
 	# 	plt.savefig(f'savefig/{i:04}')
 	# 	plt.close()
+
+	## Plot Histogram of differences.
+	avg_fish = X_fish.mean(axis=0)
+	avg_nfish = X_nfish.mean(axis=0)
+	net_image = np.absolute(avg_fish - avg_nfish)
+	fig = plt.figure(figsize=(4,4))
+	fig.suptitle("Histogram of Pixel Differences", fontsize=24, color="Blue")
+	ax = fig.add_subplot(111)
+	ax.hist(net_image)
+	ax.set_xlabel("Intensity Difference (Absolute)", fontsize=16)
+	ax.set_ylabel("Pixel Count (Total 1089)", fontsize=16)
+	plt.show()
+
+
+
+
+
+
+	# Plot net picture
+	avg_fish = X_fish.mean(axis=0)
+	# avg_nfish = X_nfish.mean(axis=0)
+	# net_image = np.absolute(avg_fish - avg_nfish)
+	# net_image = net_image - net_image.min()
+	# net_image = net_image/net_image.max()
+	# net_image = net_image*255
+
+
+	# fig = plt.figure(figsize=(12,6))
+	# fig.suptitle("Image Class Difference. (White = Largest Difference)", fontsize=24, color="Blue")
+	# ax1 = fig.add_subplot(121)
+	# plot_vector_image(net_image, ax1, "Net Image")
+	# net_image_masked = np.array([255 if x>128 else 0 for x in net_image])
+	# ax2 = fig.add_subplot(122)
+	# plot_vector_image(net_image_masked, ax2, "Binary Mask at Median")     
+
+	# plt.show()
+
 
 
 

@@ -14,6 +14,19 @@ class ImageToArray(object):
 	Call .convert_dir
 	Run .save_array to save as .npy
 
+
+	*Instantiate Image To Array*
+	Inputs: 
+		directory: (string) path to directory with images
+		resolution: (integer) the pixel size to render
+
+	Outputs:
+		None
+
+	Methods:
+		convert_dir: converts a directory of images to array. Stores image vectors in  .image_array_  and titles in .image_titles_
+		save_array: saves .image_array_ and .image_titles_ to .npy in the same directory as the script.
+
 	"""
 	def __init__(self, directory, resolution = 33):
 		self.directory_ = directory
@@ -24,27 +37,23 @@ class ImageToArray(object):
 		self.image_titles_ = np.empty(len(self.image_list_), dtype=object)
 
 	def convert_dir(self):
-		print (f"Converting {len(self.image_list_)} images in {self.directory_}")
+		"""
+		Converts image directory to grayscale, resizes, and saves as numpy array.
+
+		Inputs: None
+		Outputs: A self object with .image_array_ and .image_titles_ 
+		"""
+
 		for idx, pic in enumerate(self.image_list_):
 			try:
-				print (f"Cycle {idx+1}: Opening {pic} and grayscaling")
 				image = Image.open(f'{self.directory_}/{pic}').convert('L')
-				
-				print (f"Resizing to {self.resolution_}x{self.resolution_}")
 				image_resized = image.resize((self.resolution_, self.resolution_))
-				
-				print (f"Flattening to vector length {self.vector_size_}.")
 				image_matrix = np.array(image_resized)
 				vector = np.ravel(image_matrix)
-				
-				print ("Adding to .image_array_")
 				self.image_array_[idx] = vector
 				self.image_titles_[idx] = pic
-			
 			except OSError:
 				print("Error: skipping a non-image file!")
-		
-		print("Fixing Nans and deleting any all-black pictures.")
 		self._fixnans()
 		mask = ~(self.image_array_==0).all(1)
 		self.image_array_ = self.image_array_[mask]
@@ -57,11 +66,29 @@ class ImageToArray(object):
 		self.image_array_ = np.nan_to_num(self.image_array_)
 
 	def save_array(self):
+		"""
+		Saves .image_array_ and .image_titles_ as .npy to the same directory as the script that called it.
+		"""
+
 		np.save(self.directory_ , self.image_array_)
 		np.save(f"{self.directory_}_titles", self.image_titles_)
 		print(f'Saved to {self.directory_}')
 
 def mask_array(mask_image, image_array, mask_size=11):
+	"""
+	A standalone function that
+	1. Takes and image, grayscales and resizes to mask_size.
+	2. Masks over every image in image_array to the top left.
+	3. Returns the masked image array.
+
+	Inputs:
+		mask_image: (string) A path to an image file
+		image_array: (array) A 2-d array
+		mask_size: (integer)(optional) the square size of the mask
+
+	Outputs:
+		A numpy array
+	"""
 	mask = Image.open(mask_image).convert('L')
 	mask = mask.resize((11,11))
 	mask = np.array(mask).ravel()

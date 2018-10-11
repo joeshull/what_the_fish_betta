@@ -95,7 +95,7 @@ def plot_top_photos(X_all, y_files, model):
 
 
 def plot_vector_image(vector, ax, title, square_size = 33):
-	image = vector.reshape(33,33)
+	image = vector.reshape(square_size,square_size)
 	ax.imshow(image, cmap='gray')
 	ax.set_title(title)
 	ax.set_axis_off()
