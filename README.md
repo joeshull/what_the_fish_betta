@@ -142,11 +142,12 @@ Now that we see where the classifier will be getting the strongest signal, let's
 
 <a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a> is similar to Linear Regression: modeling a dependent variable to the modulation in independent variables. 
 While Linear Regression models a continuous output to continuous input
+
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8119b3ed1259aa8ff15166488548104b50a0f92e"></img>
 
 The Logistic Regressor models the "Log Odds" (0 and 1) as output to continuous input.
 
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21135f8ddca09553a884ea00e7502d9c3f624385.svg"></img>
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21135f8ddca09553a884ea00e7502d9c3f624385"></img>
 
 The interpretation of the coefficients is similar. In our case, the coefficients should take negative values. 
 
