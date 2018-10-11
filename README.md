@@ -9,20 +9,29 @@ An exploration in image classification using Logistic Regression
 My friend likes to fish the rivers and lakes in Colorado, but often doesn't know what fish he's brought in. He asked for an ML tool that will identify fish species, but this is Capstone 1 so we're starting at the ground floor.
 
 
-## Goal and Methods
-Attempt a "fish or not-a-fish" image classification with Logistic Regression.
+#### How the Fish?
 
-#### Methods	
+	**[Image Acquisition][a]:** 
+		Create an equally balanced image set of "Fish" and "Non-Fish" images by webscraping Google Images.
+	**[Image Processing][b]: ** 
+		a. Convert all images to grayscale and resize to 33x33px. 
+		b. Convert to integer array and flatten to vector
+	**[Image EDA][c]: ** 
+		a. Understand the parameters of a grayscale image and 
+		b. How the classifier will use the probability distributions of each feature
+	**[Logistic Regression Training][d]** 
+		Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
+	**[Classification Results][e]** 
+		A report on the results on a holdout set of 500 images.
 
-	1. Create an equally balanced image set of "Fish" and "Non-Fish" images.
-	2. Convert all images to grayscale and resize to 33x33px.
-	3. Convert images to array and flatten to vector.
-	4. Train SKLearn's Logistic Regressor with 1500 images.
-	5. Report results on a holdout set of 500 images.
+
+Now that we have a high-level view of the plan, let's dive in! (don't worry, these fish don't bite).
 
 
+## 1. Image Acquisition
+[a]: #ImageAcquisition 'Image Acquistion guide'
 
-## Image Acquisition
+In order to create my equally valances
 
 Downloaded ~1000 images for "fish"  and 1000 images of "non-fish" queried from 200 ImageNet categories 
 
@@ -31,7 +40,7 @@ Fish 						| Fish Eater (Non-fish)
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="600px" height="300px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="600px" height="400px"></img>
 
 
-## Image Processing
+## 2. Image Processing
 
 The images I downloaded started as RGB images in either JPEG or PNG form.
 
@@ -62,7 +71,7 @@ Fish Image Processing      |  Non-fish Image Processing
 Logistic regression takes a 2d matrix as input, so each Image was flattened to a vector of length 1089 (33x33).
 
 
-## Image EDA
+## 3. Image EDA
 <div align="Left">
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
 </div>
@@ -88,7 +97,10 @@ On the right, I've applied a mask at median (gray-128) to see exactly which pixe
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fishkde.gif" width="1200px" height="600px"></img>
 
-## Classification Results
+
+## Training and Classification Results
+
+Since our data is clean
 
 
 ROC & AUC            |  Confusion Matrix
