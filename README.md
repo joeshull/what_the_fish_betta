@@ -3,7 +3,6 @@
 [![Fish](https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg)](#)
 
 # What The Fish (Beta) 
-[d]: #project
 
 
 An exploration in image classification using Logistic Regression
@@ -17,22 +16,22 @@ My friend likes to fish the rivers and lakes in Colorado, but often doesn't know
 
 ## How the Fish?
 
-**[Image Acquisition][acq]:** Create a balanced set of "Fish" and "Non-Fish" images.
+**[Image Acquisition](#image-acquisition):** Create a balanced set of "Fish" and "Non-Fish" images.
 
-**[Image Processing][proc]:** Convert images to a format compatible with Logistic Regression.
+**[Image Processing](#image-processing):** Convert images to a format compatible with Logistic Regression.
 
-**[Image EDA][eda]:** Explore the features and what the classifier will see. 
+**[Image EDA](#image-eda):** Explore the features and what the classifier will see. 
 
-**[Logistic Regression Training][log]:** Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
+**[Logistic Regression Training](#logistic-regression-training):** Fit SKLearn's Logistic Regressor with 1500 Fish/Non-Fish labeled images.
 
-**[Classification Results][res]:** Report the results on a holdout set of 500 images.
+**[Classification Results](#classification-results):** Report the results on a holdout set of 500 images.
 
 
 Now that we have a high-level view of the plan, let's dive in! (don't worry, these fish don't bite).
 
 
-## 1. Image Acquisition
-[acq]: #ImageAcquisition 'Image Acquistion guide'
+## Image Acquisition
+
 
 In order to create my equally valances
 
@@ -43,8 +42,8 @@ Fish 						| Fish Eater (Non-fish)
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg" width="600px" height="300px"></img>	|	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_bear.jpg" width="600px" height="400px"></img>
 
 
-## 2. Image Processing
-[proc]: #ImageProcessing 'Image Processing guide'
+## Image Processing
+
 
 The images I downloaded started as RGB images in either JPEG or PNG form.
 
@@ -75,8 +74,7 @@ Fish Image Processing      |  Non-fish Image Processing
 Logistic regression takes a 2d matrix as input, so each Image was flattened to a vector of length 1089 (33x33).
 
 
-## 3. Image EDA
-[eda]: #ImageEDA 'Image EDA guide'
+## Image EDA
 <div align="Left">
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
 </div>
@@ -104,11 +102,11 @@ On the right, I've applied a mask at median (gray-128) to see exactly which pixe
 
 
 ## Logistic Regression Training
-[log]: #Logistic 'A quick guide to Logistic Regression'
 
 
-## Classification Result
-[res]: #Results 'A report on the Logistic Regresion model results'
+
+## Classification Results
+
 
 Since our data is clean
 
