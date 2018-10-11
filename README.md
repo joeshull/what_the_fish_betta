@@ -2,15 +2,22 @@
 
 An exploration in image classification using Logistic Regression
 
-Tools: [Python , Numpy, Python Image Library, SKLearn]
+	Tools: [Python, Pandas, Numpy, Python Image Library, SKLearn]
 
 
 ## Why The Fish?
 My friend likes to fish the rivers and lakes in Colorado, but often doesn't know what fish he's brought in. He asked for an ML tool that will identify fish species, but this is Capstone 1 so we're starting at the ground floor.
 
 
-## Goals
-Attempt a "fish or not-a-fish" image classification with Logistic Regression trained on ~1500 33x33px grayscaled images.
+## Goal and Methods
+Attempt a "fish or not-a-fish" image classification with Logistic Regression.
+
+####Methods	
+	1. Create an equally balanced image set of "Fish" and "Non-Fish" images.
+	2. Convert all images to grayscale and resize to 33x33px.
+	3. Convert images to array and flatten to vector.
+	4. Train SKLearn's Logistic Regressor with 1500 images and then report results on a holdout set of 500 pictures.
+
 
 
 ## Image Acquisition
@@ -26,7 +33,7 @@ Fish 						| Fish Eater (Non-fish)
 
 The images I downloaded started as RGB images in either JPEG or PNG form.
 
-Here's an example of an RGB Photo zoomed in to the pixel level
+	Here's an example of an RGB Photo zoomed in to the pixel level
 
 RGB Picture Pixels			| RGB Pixels as Integer Values
 :-------------------------:|:-------------------------:
@@ -43,12 +50,18 @@ courtesy of xaraxone.com
 courtesy of xaraxone.com
 
 
-I wanted to eliminate color as a variable to see if the classifier could simply identify some shape in the image. To do that I used PIL's "L" algoright to convert the image to grayscale and de facto provide us with a 2D matrix.
+
+
+I wanted to eliminate color as a variable to see if the classifier could simply identify some shape in the image. To do that I used PIL's "L" algorithm to convert the image to grayscale (0-255) and de facto provide us with a 2D matrix.
+
+Converting to grayscale allows us to do a couple things:
+1. Simplify the classification to shape and lighting only
+2. Maintain some semblance of sampling density (RGB features at 33px = 3267)
 
 Greyscaled Using PIL's 'L' Algorithm
 	L = R * 299/1000 + G * 587/1000 + B * 114/1000
 
-<div align="Left">
+<div align="Center">
     <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png" width="300px" height="300px"></img> 
 </div>
 
@@ -110,7 +123,16 @@ White_fish Classify
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/not_fish.png" width="1200px" height="800px"></img>
 
 
-## Conclusion
+## Future Work
+	
+
+#### References and Resources
+http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif
+http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif
+https://github.com/hardikvasa/google-images-download
+https://planspace.org/20170430-sampling_imagenet/
+
+
 
 
 
