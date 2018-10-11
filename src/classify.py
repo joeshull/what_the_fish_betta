@@ -77,9 +77,28 @@ if __name__ == '__main__':
 	fishmodel = FishClassify(X_train, y_train)
 	fishmodel = fishmodel.fit()
 
-	# # # Classify a stock photo of a fish.
-	# # #----------------------------------
-	# classify_photo('../images/fish_white.jpg', model)
+	# # Classify a stock photo of a fish.
+	# #----------------------------------
+	classify_photo('../images/fish_white.jpg', fishmodel)
+
+
+
+	#PLOT ROC CURVE
+	#------------------------
+	plot_roc(fishmodel, X_test, y_test)
+
+
+	# #PLOT CONFUSION MATRIX
+	# ------------------------
+	# cnf_matrix = confusion_matrix(y_test, fishmodel.predict(X_test))
+	# fig = plt.figure(figsize=(12,8))
+	# ax = fig.add_subplot(111)
+	# ax.grid(False)
+	# class_names = ['fish', 'not fish']
+	# plot_confusion_matrix(cnf_matrix, ax, classes=class_names,normalize=True,
+ #                      title='Confusion matrix, with normalization')
+	# plt.show()
+
 
 
 	##Plot KDEs for a chosen pixel on each class
@@ -94,16 +113,16 @@ if __name__ == '__main__':
 	# 	plt.close()
 
 	## Plot Histogram of differences.
-	avg_fish = X_fish.mean(axis=0)
-	avg_nfish = X_nfish.mean(axis=0)
-	net_image = np.absolute(avg_fish - avg_nfish)
-	fig = plt.figure(figsize=(4,4))
-	fig.suptitle("Histogram of Pixel Differences", fontsize=24, color="Blue")
-	ax = fig.add_subplot(111)
-	ax.hist(net_image)
-	ax.set_xlabel("Intensity Difference (Absolute)", fontsize=16)
-	ax.set_ylabel("Pixel Count (Total 1089)", fontsize=16)
-	plt.show()
+	# avg_fish = X_fish.mean(axis=0)
+	# avg_nfish = X_nfish.mean(axis=0)
+	# net_image = np.absolute(avg_fish - avg_nfish)
+	# fig = plt.figure(figsize=(4,4))
+	# fig.suptitle("Histogram of Pixel Differences", fontsize=24, color="Blue")
+	# ax = fig.add_subplot(111)
+	# ax.hist(net_image)
+	# ax.set_xlabel("Intensity Difference (Absolute)", fontsize=16)
+	# ax.set_ylabel("Pixel Count (Total 1089)", fontsize=16)
+	# plt.show()
 
 
 
@@ -111,7 +130,7 @@ if __name__ == '__main__':
 
 
 	# Plot net picture
-	avg_fish = X_fish.mean(axis=0)
+	# avg_fish = X_fish.mean(axis=0)
 	# avg_nfish = X_nfish.mean(axis=0)
 	# net_image = np.absolute(avg_fish - avg_nfish)
 	# net_image = net_image - net_image.min()
@@ -145,23 +164,8 @@ if __name__ == '__main__':
 
 	# ##Plot fishiest fish, non-fishiest non-fish
 	# ##--------------------------------------
-	# plot_top_photos(X, y_files, model)
+	# plot_top_photos(X, y_files, fishmodel)
 
 
 
-	# #PLOT ROC CURVE
-	# #------------------------
-	# plot_roc(model, X_test, y_test)
-
-
-	# #PLOT CONFUSION MATRIX
-	# ------------------------
-	# cnf_matrix = confusion_matrix(y_test, model.predict(X_test))
-	# fig = plt.figure(figsize=(12,8))
-	# ax = fig.add_subplot(111)
-	# ax.grid(False)
-	# class_names = ['fish', 'not fish']
-	# plot_confusion_matrix(cnf_matrix, ax, classes=class_names,normalize=True,
- #                      title='Confusion matrix, with normalization')
-	# plt.show()
 
