@@ -28,17 +28,19 @@ The images I downloaded started as RGB images in either JPEG or PNG form.
 
 Here's an example of an RGB Photo zoomed in to the pixel level
 
-<div align="Left">
-    <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="600px"></img> 
-</div>
+Fish 						| Fish Eater (Non-fish) 
+:-------------------------:|:-------------------------:
+<a href="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif"><img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif" width="600px" height="600px"></img></a>		|
+<img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="600px"></img> 
+
 
 
 
 courtesy of xaraxone.com
 
-<div align="Left">
+
     <img src="http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif" width="600px" height="600px"></img> 
-</div>
+
 courtesy of xaraxone.com
 
 
