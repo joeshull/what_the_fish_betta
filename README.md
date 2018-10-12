@@ -59,7 +59,7 @@ Numerically speaking, RGB images are 3D matrices with shape:
 Height: rows|
 Depth:  3**
 
-The *Height* and *Width* give us the number of pixels in each dimension. More pixels in each dimension results in a larger picture and higher resolution (pixels per inch) when scale is held constant. 
+The *Height* and *Width* give us the number of pixels in each dimension. More pixels in each each dimension give us a larger picure or higher resolution (pixels per inch).
 
 The *Depth* of 3 gives us three 2D matrices to store the color brightness values for each color (Red, Green, Blue) at each pixel. The values can take
 any value from 0 to 255, and their combinations result in over 16-million colors.
