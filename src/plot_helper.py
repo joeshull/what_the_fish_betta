@@ -89,7 +89,9 @@ def plot_top_photos(X_all, y_files, model):
 	plot_vector_image(X_all[top_fish],ax1, "Fishiest Fish")
 	plot_vector_image(X_all[top_nfish],ax2, "Least Fishy Non-Fish")
 	ax1_1.imshow(np.array(top_fishog))
+	ax1_1.set_axis_off()
 	ax2_1.imshow(np.array(top_nfishog))
+	ax2_1.set_axis_off()
 	plt.tight_layout()
 	plt.show()
 

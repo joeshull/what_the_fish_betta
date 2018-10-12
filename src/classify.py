@@ -3,9 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 from PIL import Image
 from scipy import stats
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.externals import joblib
 from plot_helper import*
+import pickle
 
 
 class FishClassify(object):
@@ -27,10 +30,11 @@ class FishClassify(object):
 
 
 
-	def __init__(self, X, y, model=LogisticRegression()):
+	def __init__(self, X, y, model=LogisticRegression(penalty='l2')):
 		self.X = X
 		self.y = y
 		self.model = model
+
 
 	def fit(self):
 		"""
@@ -41,14 +45,15 @@ class FishClassify(object):
 		return self.model
 
 
-	def classify_photo(self,file_path):
-		"""
-		Inputs: A string path to image file.
-		Outputs: The binary classification probability
-		"""
-		photo_fish = np.array(Image.open(file_path).convert('L').resize((33,33))).ravel().reshape(1,-1)
-		prob = self.model.predict_proba(photo_fish)
-		print(prob)
+def classify_photo(file_path,scaler, model):
+	"""
+	Inputs: A string path to image file.
+	Outputs: The binary classification probability
+	"""
+	photo_fish = np.array(Image.open(file_path).convert('L').resize((33,33))).ravel().reshape(1,-1)
+	photo_fish = scaler.transform(photo_fish)
+	prob = model.predict_proba(photo_fish)
+	print(prob)
 
 
 if __name__ == '__main__':
@@ -73,19 +78,50 @@ if __name__ == '__main__':
 	#Make Holdout Set
 	X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
+
+	#Standard Scale the Data
+	scaler = StandardScaler().fit(X_train)
+	X_train = scaler.transform(X_train)
+	X_test = scaler.transform(X_test)
+
+
+
 	#Fit
-	fishmodel = FishClassify(X_train, y_train)
-	fishmodel = fishmodel.fit()
+	#Use CV to find best features and prevent overfitting
+	# logcv = LogisticRegressionCV(Cs=100, penalty='l1', cv=4, solver='liblinear')
+	# logcv = logcv.fit(X_train, y_train)
+
+	# joblib.dump(logcv,'LogisticRegressionCV_fish.joblib')
+
+	fishmodel = joblib.load('LogisticRegressionCV_fish.joblib')
+
+	# fishmodel = FishClassify(X_train, y_train, fishmodel)
+
+
+	
+
+
+
+
+	##Plot Coeffiecients
+	# coefs = fishmodel.coef_[0]
+	# x = np.arange(0,1089,1)
+	# coefs_masked = np.array([255 if x>0 else 0 for x in coefs])
+	# fig = plt.figure(figsize=(6,6))
+	# ax = fig.add_subplot(111)
+
+	# plot_vector_image(coefs_masked,ax, "Direction of Coeffiecients (White = positive)")
+
 
 	# # Classify a stock photo of a fish.
-	# #----------------------------------
-	classify_photo('../images/fish_white.jpg', fishmodel)
+	# # #----------------------------------
+	classify_photo('../images/fish_white.jpg',scaler, fishmodel)
 
 
 
-	#PLOT ROC CURVE
-	#------------------------
-	plot_roc(fishmodel, X_test, y_test)
+	# #PLOT ROC CURVE
+	# #------------------------
+	# plot_roc(fishmodel, X_test, y_test)
 
 
 	# #PLOT CONFUSION MATRIX
@@ -162,8 +198,10 @@ if __name__ == '__main__':
 
 
 
-	# ##Plot fishiest fish, non-fishiest non-fish
-	# ##--------------------------------------
+	##Plot fishiest fish, non-fishiest non-fish
+	##--------------------------------------
+	# X = scaler.transform(X)
+
 	# plot_top_photos(X, y_files, fishmodel)
 
 
