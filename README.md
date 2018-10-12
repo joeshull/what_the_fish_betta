@@ -1,6 +1,6 @@
 
 
-[![Fish](https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/ex_fish.jpg)](#)
+[![Fish](https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/bettafish.jpg)](#)
 
 # What The Fish (Beta) 
 
@@ -33,16 +33,16 @@ Now that we have a high-level view of the plan, let's dive in! (don't worry, the
 ## Image Acquisition
 
 
-In order to create my equally balanced classes I wrote an <a href="">image scraping script</a> that leverages the <a href="">Google Images Download</a> tool built by @hardikvasa.
+In order to create my image classes I wrote an <a href="">image scraping script</a> that leverages the <a href="">Google Images Download</a> tool built by @hardikvasa.
 
-The Fish Class: Query Google Images for "Fish" and download 1000 of the top results. Easy-peasy.
+The Fish Class: Query Google Images for "Fish" and download ~1000 of the top results. Easy-peasy.
 	
 	gid = GoogleImageDownloader()	
 	gid.download_images_keyword('fish', 1000, 'all_fish')
 
 The Non-Fish class: Query approx. <a href="https://planspace.org/20170430-sampling_imagenet/">200 "non-fish"</a> categories ranked according to the ImageNet database. 
 
-	gid.download_images_from_list(words['words'],6, 'non_fish')
+	gid.download_images_from_list(words['words'],5, 'non_fish')
 
 
 Once downloaded, I manually screened the folders to make sure the classes were accurately labeled and there were no fish images in the "non-fish" set and vice versa.
@@ -202,8 +202,8 @@ Here are a few things I'll need to do:
 - [x] Get a list of fish species in Colorado
 - [x] Download at least 500 photos for each species of fish to classify
 - [x] Retrain a MobileNet classifier to classify fish species
-- [ ] Train it better, or make a new one so it classifies accurately
-- [ ] Make and release an app
+- [ ] Train it better, or make a new model so it classifies accurately
+- [ ] Make an app somehow
 	
 ## AUTHOR
 [auth]: #author 
