@@ -194,7 +194,7 @@ And just to make sure we haven't accidentally discovered the secret fish-detecti
 
 
 ## Future Work
-Going forward, I would like to build an image-classification neural net and app so that my friends can classify fish more easily.
+Going forward, I would like to build an image-classification neural net and app so that my friends can classify fish species.
 
 Here are a few things I'll need to do:
 - [x] Get a list of fish species in Colorado
