@@ -187,7 +187,7 @@ Let's see the most-probable samples from each class.
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="1200px" height="800px"></img>
 
-As expected, it picked up on the difference in brightness between the stock photos and the darker sea-scape pictures.
+As expected, it picked up on the difference in brightness between the stock photos and the darker sea-scape pictures. The "fishiest fish" is an image with a bright center and dark border, and the opposite is true for the "non-fish".
 
 
 And just to make sure we haven't accidentally discovered the secret fish-detection powers of Logistic Regression.....
