@@ -2,7 +2,7 @@
 
 [![Fish](https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/bettafish.jpg)](#)
 
-# What The Fish (Beta) 
+# What The Fish (Betta) 
 
 
 An exploration in image classification using Logistic Regression
