@@ -179,7 +179,7 @@ ROC & AUC            |  Confusion Matrix
 :-------------------------:|:-------------------------:
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="600px" height="400px"></img>
 
-Not bad! On the left, we see that the classifier got an Area Under the Curve of almost 78%. It was able to catch 71% of  "Fish" pictures and 77% on "Non-Fish" pictures from a holdout set that it hadn't previously seen.
+Not bad! On the left, we see that the classifier got an Area Under the Curve of almost 78%. It was able to catch 71% of  "Fish" pictures and 77% on "Non-Fish" pictures from a holdout set of 500 pictures that it hadn't previously seen.
 
 Let's see the most-probable samples from each class. 
 
