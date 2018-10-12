@@ -33,7 +33,7 @@ Now that we have a high-level view of the plan, let's dive in! (don't worry, the
 ## Image Acquisition
 
 
-In order to create my equally balanced classes I wrote an <a href="">image scraping script</a> that leverages the <a href="">Google Images Download</a> tool built by hardikvasa.
+In order to create my equally balanced classes I wrote an <a href="">image scraping script</a> that leverages the <a href="">Google Images Download</a> tool built by @hardikvasa.
 
 The Fish Class: Query Google Images for "Fish" and download 1000 of the top results. Easy-peasy.
 	
