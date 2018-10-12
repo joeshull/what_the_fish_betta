@@ -202,7 +202,7 @@ Here are a few things I'll need to do:
 - [x] Get a list of fish species in Colorado
 - [x] Download least 500 photos for each species of fish to classify
 - [x] Retrain a MobileNet classifier to classify fish species
-- [ ] Train it so it works accurately
+- [ ] Train it, or make a new one so it classifies accurately
 - [ ] Make and release an app
 	
 ## AUTHOR
