@@ -145,19 +145,23 @@ While Linear Regression models a continuous output to continuous input
 
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8119b3ed1259aa8ff15166488548104b50a0f92e"></img>
 
-The Logistic Regressor models the "Log Odds" (0 and 1) as output to continuous input.
+The Logistic Regressor models the "Log Odds" (0.0-1.0) as output to continuous input.
 
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21135f8ddca09553a884ea00e7502d9c3f624385"></img>
 
-The interpretation of the coefficients is similar. In our case, the coefficients should take negative values. 
+The interpretation of the coefficients is similar. In our case, when the coefficients of a given pixel is negative, the probability of that image being a fish decreases as pixel intensity increases. The alternate is also true. 
+
+Since our feature space is so large (1089) relative to the sample size, I used an <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">L1 regularization</a> to penalize the model on the absolute value of the coefficients. This incentivizes the model to use the strongest features and eliminate the features which are not contributing. I also scaled and standardized the data (For all columns, subtract the mean and divide by the standard deviation) using SKLearn's Standard Scaler. This will make our coefficients more stable and interpretable. 
+
+Let's look at where our coefficients are negative and positive. (White = +Beta, Black = -Beta)
+
+<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/coef.png"></img>
+
+As we saw in Image EDA, the probability of an image being a "fish" decreases as pixel intensity increases above the mean the edges..
 
 
+For a more in-depth explanation on Logistic Regression, check out this <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">article</a> and the <a href="https://en.wikipedia.org/wiki/Logistic_regression">wiki</a>.
 
-As we saw in Image EDA, the probability of an image being a "fish" decreases as pixel intensity increases.
-
-
-For a more in-depth explanation on Logistic Regression, check out this article and the wiki.
-https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc
 
 
 ## Classification Results
@@ -168,12 +172,6 @@ https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303b
 ROC & AUC            |  Confusion Matrix
 :-------------------------:|:-------------------------:
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="600px" height="400px"></img>
-
-ROC Curve
-
-
-
-Confusion Matrix
 
 
 
