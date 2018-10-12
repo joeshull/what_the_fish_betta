@@ -156,15 +156,17 @@ The Logistic Regressor models the "Log Odds" (0.0-1.0) as output to continuous i
 
 This gives us a probability classifier for two classes: "Fish" or "Non-Fish" in our case.
 
-The interpretation of the coefficients is similar to that of linear regression. In our case, when the coefficients of a given pixel is negative, the probability of that image being a fish decreases as pixel intensity increases. The alternate is also true. 
-
 Since our feature space is so large (1089) relative to the sample size, I used an <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">L1 regularization</a> to penalize the model on the absolute value of the coefficients. This incentivizes the model to use the strongest features and eliminate the features which are not contributing. I also scaled and standardized the data (For all columns, subtract the mean and divide by the standard deviation) using SKLearn's Standard Scaler. This will make our coefficients more stable and interpretable. 
+
+The interpretation of the coefficients is similar to that of linear regression. In our case, when the coefficients of a given pixel is negative, the probability of that image being a fish decreases as pixel intensity increases. The alternate is also true. 
 
 Let's look at where our coefficients are negative and positive. (White = +, Black = -)
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/coef.png"></img>
 
 When we look at our <a href="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png">Average Picture</a> for each class we see that "Non-Fish" are generally brighter at the edges, while "Fish" pictures are brighter in the center. The direction of our coefficients speak to this relationship: As pixel intensity increases around the edges, we generally see a negative value for it's relative "fishiness". Conversely, in the middle, we see some positive correlation with pixel intensity and "fishiness".
+
+Of note: Though the "Non-Fish" images were generally brighter at the edges, the positive coefficients at the top edge the image correspond to the few areas where the "Fish" images had a higher pixel intensity than the "non-fish" images.
 
 
 *For a more in-depth explanation on Logistic Regression, check out this <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">article</a> and the <a href="https://en.wikipedia.org/wiki/Logistic_regression">wiki</a>.*
