@@ -174,7 +174,7 @@ Of note: Though the "Non-Fish" images were generally brighter at the edges, the 
 
 
 ## Classification Results
-Now that we've explore the data and our model, let's look at the results!
+Now that we've explored the data and our model, let's look at the results!
 
 
 ROC & AUC            |  Confusion Matrix
