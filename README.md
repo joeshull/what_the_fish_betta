@@ -93,7 +93,7 @@ Converting to grayscale allows us to do a couple things:
 #### Resizing
 Once grayscaled, the images were resized to a fixed image size (33x33px). Creating a fixed image size keeps the pixel space consistent at 1089 total pixels.
 
-The image size was picked by visually testing smallest picture size that my human eye could accurately identify a "fish" or "non-fish". 
+I picked the image size by visually testing smallest picture size at which my human eye could accurately identify a "fish" or "non-fish". 
 
 
 Fish Image Processing      |  Non-fish Image Processing
@@ -143,7 +143,7 @@ Now that we see where the classifier will be getting the strongest signal, let's
 
 
 ## Logistic Regression
-To classify the pictures, I'm using classic <a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a>. Logistic Regression is similar to Linear Regression: modeling a dependent variable response to change in independent variables. 
+To classify the pictures, I'm using classic <a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a>. Logistic Regression is similar to Linear Regression: modeling a dependent variable response to the change in independent variables. 
 
 Here's the big difference:
 While Linear Regression models a continuous output to continuous input
@@ -166,7 +166,7 @@ Let's look at where our coefficients are negative and positive. (White = +, Blac
 
 When we look at our <a href="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png">Average Picture</a> for each class we see that "Non-Fish" are generally brighter at the edges, while "Fish" pictures are brighter in the center. The direction of our coefficients speak to this relationship: As pixel intensity increases around the edges, we generally see a negative value for it's relative "fishiness". Conversely, in the middle, we see some positive correlation with pixel intensity and "fishiness".
 
-Of note: Though the "Non-Fish" images were generally brighter at the edges, the positive coefficients at the top edge the image correspond to the few areas where the "Fish" images had a higher pixel intensity than the "non-fish" images.
+Of note: Though the "Non-Fish" images were generally brighter at the edges, the positive coefficients at the top edge correspond to the few areas where the "Fish" images had a higher pixel intensity than the "non-fish" images.
 
 
 *For a more in-depth explanation on Logistic Regression, check out this <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">article</a> and the <a href="https://en.wikipedia.org/wiki/Logistic_regression">wiki</a>.*
@@ -200,9 +200,9 @@ Going forward, I would like to build an image-classification neural net and app 
 
 Here are a few things I'll need to do:
 - [x] Get a list of fish species in Colorado
-- [x] Download least 500 photos for each species of fish to classify
+- [x] Download at least 500 photos for each species of fish to classify
 - [x] Retrain a MobileNet classifier to classify fish species
-- [ ] Train it, or make a new one so it classifies accurately
+- [ ] Train it better, or make a new one so it classifies accurately
 - [ ] Make and release an app
 	
 ## AUTHOR
@@ -214,8 +214,8 @@ You can follow me on [twitter](https://twitter.com/joeyshull) or just [email](ma
 
 List of people that I would like to thank:
 
-- Rob Troup for his endless stream of great data science ideas.
 - Jamie Sloat for her endless support.
+- Rob Troup for his endless stream of great data science ideas.
 - Frank Burkholder for great graphic ideas and helping the project get off the ground.
 - Michael Dyer for tech geekery and tech support.
 
