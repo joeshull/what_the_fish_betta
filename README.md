@@ -197,9 +197,9 @@ And just to make sure we haven't accidentally discovered the secret fish-detecti
 Going forward, I would like to build an image-classification neural net and app so that my friends can classify fish more easily.
 
 Here are a few things I'll need to do:
--[x] Get a list of common fish in Colorado
--[x] Download least 500 photos for each species of fish to classify
--[] Train a custom neural net or pre-trained image classifier from a library like Tensorflow
+- [x] Get a list of common fish in Colorado
+- [x] Download least 500 photos for each species of fish to classify
+- [ ] Train a custom neural net or pre-trained image classifier from a library like Tensorflow
 
 	
 ## AUTHOR
