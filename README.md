@@ -157,45 +157,60 @@ Let's look at where our coefficients are negative and positive. (White = +Beta, 
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/coef.png"></img>
 
-As we saw in Image EDA, the probability of an image being a "fish" decreases as pixel intensity increases above the mean the edges..
+When we look at our <a href="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png">Average Picture</a> for each class we see that Non-Fish are generally brighter at the edges, while "Fish" pictures are brighter in the center. The direction of our coefficients speak to this relationship: As pixel intensity increases around the edges, we generally see a negative value for it's relative "fishiness". Conversely, in the middle, we see positive correlation with pixel intensity and "fishiness".
 
 
-For a more in-depth explanation on Logistic Regression, check out this <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">article</a> and the <a href="https://en.wikipedia.org/wiki/Logistic_regression">wiki</a>.
+*For a more in-depth explanation on Logistic Regression, check out this <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">article</a> and the <a href="https://en.wikipedia.org/wiki/Logistic_regression">wiki</a>.*
 
 
 
 ## Classification Results
-
-
+Now that we've explore the data and our model, let's look at the results!
 
 
 ROC & AUC            |  Confusion Matrix
 :-------------------------:|:-------------------------:
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="600px" height="400px"></img>
 
+Not bad! On the left, we see that the classifier got an Area Under the Curve of almost 78%! It was able to "catch" 71% of unseen fish pictures and 77% on unseen non-fish pictures!
 
-
-Min/Max fish
+Let's see the most-probable samples from each class. 
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="1200px" height="800px"></img>
 
-White_fish Classify
+As expected, it picked up on the difference in brightness between the stock photos and the darker sea-scape pictures.
+
+
+And just to make sure we haven't accidentally discovered the secret fish-detection powers of Logistic Regression.....
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/not_fish.png" width="1200px" height="800px"></img>
 
 
 ## Future Work
+Going forward, I would like to build an image-classification neural net and app so that my friends can classify fish more easily.
+
+Here are a few things I'll need to do:
+-[x] Get a list of common fish in Colorado
+-[x] Download least 500 photos for each species of fish to classify
+-[] Train a custom neural net or pre-trained image classifier from a library like Tensorflow
+
 	
+## AUTHOR
+[auth]: #author 
+You can follow me on [twitter](https://twitter.com/joeyshull) or just [email](mailto:joseph.shull@gmail.com) me.
 
-#### References and Resources
-http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_04.gif
-http://archive.xaraxone.com/webxealot/workbook35/rgb-cymk_02.gif
+## ACKNOWLEDGMENTS
+[acc]: acknowledgments
 
-https://github.com/hardikvasa/google-images-download
+List of people that I would like to thank:
 
-https://planspace.org/20170430-sampling_imagenet/
+- Rob Troup for his endless stream of great data science ideas.
+- Jamie Sloat for her endless support.
+- Frank Burkholder for great graphic ideas and helping the project get off the ground.
+- Michael Dyer for tech geekery and tech support.
 
 
+Copyright © 2018 Joe Shull
 
 
 
