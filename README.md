@@ -158,7 +158,7 @@ This gives us a probability classifier for two classes: "Fish" or "Non-Fish" in 
 
 Since our feature space is so large (1089) relative to the sample size, I used an <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">L1 regularization</a> to penalize the model on the absolute value of the coefficients. This incentivizes the model to use the strongest features and eliminate the features which are not contributing. I also scaled and standardized the data (For all columns, subtract the mean and divide by the standard deviation) using SKLearn's Standard Scaler. This will make our coefficients more stable and interpretable. 
 
-The interpretation of the coefficients is similar to that of linear regression. In our case, when the coefficients of a given pixel is negative, the probability of that image being a fish decreases as pixel intensity increases. The alternate is also true. 
+The interpretation of the coefficients is similar to that of linear regression. In our case, when the coefficients of a given pixel is negative, the probability of that image being a fish decreases as pixel intensity increases. The opposite is also true. 
 
 Let's look at where our coefficients are negative and positive. (White = +, Black = -)
 
