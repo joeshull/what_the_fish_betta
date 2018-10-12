@@ -199,8 +199,9 @@ Going forward, I would like to build an image-classification neural net and app 
 Here are a few things I'll need to do:
 - [x] Get a list of fish species in Colorado
 - [x] Download least 500 photos for each species of fish to classify
-- [ ] Train a custom neural net or pre-trained image classifier from a library like Tensorflow
-
+- [x] Retrain a MobileNet classifier to classify fish species
+- [ ] Train it so it works accurately
+- [ ] Make and release an app
 	
 ## AUTHOR
 [auth]: #author 
