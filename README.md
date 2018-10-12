@@ -5,7 +5,7 @@
 # What The Fish (Betta) 
 
 
-An exploration in image classification using Logistic Regression
+An exploration in image classification using Logistic Regression to classify "Fish" and "Non-Fish" images.
 
 	Tools: [Python, Pandas, Numpy, Python Image Library, SKLearn]
 
