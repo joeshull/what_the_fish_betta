@@ -216,7 +216,7 @@ List of people that I would like to thank:
 
 - Jamie Sloat for her endless support.
 - Rob Troup for his endless stream of great data science ideas.
-- Frank Burkholder for great graphic ideas and helping the project get off the ground.
+- Frank Burkholder for great graphic ideas.
 - Michael Dyer for tech geekery and tech support.
 
 
