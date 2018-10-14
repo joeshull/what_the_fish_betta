@@ -101,7 +101,7 @@ Fish Image Processing      |  Non-fish Image Processing
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/fish_proc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/nfish_proc.png" width="600px" height="400px"></img>
 
 
-Logistic regression takes a 2d matrix as input, so each Image was flattened to a vector of length 1089 (33x33).
+Logistic Regression takes a 2D matrix as input, so each Image was flattened to a vector of length 1089 (33x33).
 
 
 ## Image EDA
@@ -111,7 +111,7 @@ Below is a plot that shows the mean of all pixels for both classes.
 
 *On the left*, the mean "fish" appears to be of lower intensity on the borders with a brighter shading in the middle. If you squint, it might even look like a underwater photo of a fish. 
 
-*On the right*, the mean "non-fish" picture appears to have a white border with some object of focus located directly in the center. Google Images seems to favor stock photos (objects on white background) for the first several images in a query. The webscraping script queried 200 words and pulled 5-6 images for each. As you can see, we probably have a large amount of stock photos.
+*On the right*, the mean "Non-fish" picture appears to have a white border with some object of focus located directly in the center. Google Images seems to favor stock photos (objects on white background) for the first several images in a query. The webscraping script queried 200 words and pulled 5-6 images for each. As you can see, we have a large amount of stock photos in the "Non-Fish" class..
 
 <div align="Left">
 	<img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png" width="1200px" height="600px"></img> 
@@ -130,7 +130,7 @@ The probability of an image being labeled "fish" will decrease as intensity incr
 What does it look like if we subtract the means from each other to find the biggest difference in intensity? E.g. at Pixel 496, the difference between the classes is (~80). 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/histpixdif.png" width="1200px" height="600px"></img>
 
-Once we net the images at each pixel, we can normalize and rescale them back to our 0-255 values for image rendering. 
+Once we net the images at each pixel, we can normalize and rescale them back to 0-255 for image rendering. 
 
 Below we can see the biggest differences between the two images are at the edges. 
 On the right, I've applied a binary mask at the median (gray-128) to see exactly which pixels will give the classifier the strongest signal.
@@ -146,27 +146,27 @@ Now that we see where the classifier will be getting the strongest signal, let's
 To classify the pictures, I'm using classic <a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a>. Logistic Regression is similar to Linear Regression: modeling a dependent variable response to the change in independent variables. 
 
 Here's the big difference:
-While Linear Regression models a continuous output to continuous input
+While Linear Regression models a continuous output to continuous input:
 
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8119b3ed1259aa8ff15166488548104b50a0f92e"></img>
 
-The Logistic Regressor models the "Log Odds" (0.0-1.0) as output to continuous input.
+Logistic Regression models the "Log Odds" (1.0-0.0) as output to continuous input:
 
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21135f8ddca09553a884ea00e7502d9c3f624385"></img>
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21135f8ddca09553a884ea00e7502d9c3f624385"></img>.
 
-This gives us a probability classifier for two classes: "Fish" or "Non-Fish" in our case.
+This gives us a probability classification for two classes: "Fish" or "Non-Fish" in this case.
 
-Since our feature space is so large (1089) relative to the sample size, I used an <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">L1 regularization</a> to penalize the model on the absolute value of the coefficients. This incentivizes the model to use the strongest features and eliminate the features which are not contributing. I also scaled and standardized the data (For all columns, subtract the mean and divide by the standard deviation) using SKLearn's Standard Scaler. This will make our coefficients more stable and interpretable. 
+Since the feature space is so large (1089) relative to the sample size, I used an <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">L1 regularization</a> to penalize the model on the absolute value of the coefficients. This incentivizes the model to use the strongest features and eliminate non-contributing coefficients. I also scaled and standardized the data (For all columns, subtract the mean and divide by the standard deviation) to make the coefficients more stable and interpretable. 
 
-The interpretation of the coefficients is similar to that of linear regression. In our case, when the coefficients of a given pixel is negative, the probability of that image being a fish decreases as pixel intensity increases. The opposite is also true. 
+The interpretation of the coefficients is similar to that of linear regression. In this case, when the coefficient of a given pixel is positive, the probability of that image being a "fish" increases as pixel intensity increases. The opposite is also true. 
 
-Let's look at where our coefficients are negative and positive. (White = +, Black = -)
+Let's look at where the coefficients are positive and negative. (White = +, Black = -)
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/coef.png"></img>
 
-When we look at our <a href="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png">Average Picture</a> for each class we see that "Non-Fish" are generally brighter at the edges, while "Fish" pictures are brighter in the center. The direction of our coefficients speak to this relationship: As pixel intensity increases around the edges, we generally see a negative value for it's relative "fishiness". Conversely, in the middle, we see some positive correlation with pixel intensity and "fishiness".
+When we look at the <a href="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/avgimage1.png">Average Picture</a> for each class we see that "Non-Fish" are generally brighter at the edges, while "Fish" pictures are brighter in the center. The direction of the coefficients speak to this relationship: As pixel intensity increases around the edges, we generally see a negative value for it's relative "fishiness". Conversely, in the middle, we see some positive correlation with pixel intensity and "fishiness".
 
-Of note: Though the "Non-Fish" images were generally brighter at the edges, the positive coefficients at the top edge correspond to the few areas where the "Fish" images had a higher pixel intensity than the "non-fish" images.
+Of note: Though the "Non-Fish" images were generally brighter at the edges, the positive coefficients at the top edge correspond to the few areas where the "Fish" images had a higher pixel intensity than the "Non-Fish" images.
 
 
 *For a more in-depth explanation on Logistic Regression, check out this <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">article</a> and the <a href="https://en.wikipedia.org/wiki/Logistic_regression">wiki</a>.*
@@ -174,20 +174,20 @@ Of note: Though the "Non-Fish" images were generally brighter at the edges, the 
 
 
 ## Classification Results
-Now that we've explored the data and our model, let's look at the results!
+Now that we've explored the data and the model, let's look at the results!
 
 
 ROC & AUC            |  Confusion Matrix
 :-------------------------:|:-------------------------:
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/rocauc.png" width="600px" height="400px"></img>   |  <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/conf_matrix.png" width="600px" height="400px"></img>
 
-Not bad! On the left, we see that the classifier got an Area Under the Curve of almost 78%. It was able to catch 71% of  "Fish" pictures and 77% on "Non-Fish" pictures from a holdout set of 500 pictures that it hadn't previously seen.
+Not bad! On the left, we see that the classifier achieved an Area Under the Curve of almost 78%. It was able to *catch* 71% of  "Fish" pictures and 77% on "Non-Fish" pictures from a holdout set of 500 pictures that it had not previously seen.
 
-Let's see the most-probable samples from each class. 
+Let's look at the archetypical samples from each class. 
 
 <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/MaxMin.png" width="1200px" height="800px"></img>
 
-As expected, it picked up on the difference in brightness between the stock photos and the darker sea-scape pictures. The "fishiest fish" is an image with a bright center and dark border, and the opposite is true for the "non-fish".
+The "fishiest fish" is an image with a bright center and dark border, and the opposite is true for the "non-fish".
 
 
 And just to make sure we haven't accidentally discovered the secret fish-detection powers of Logistic Regression.....
@@ -218,6 +218,7 @@ List of people that I would like to thank:
 - Rob Troup for his endless stream of great data science ideas.
 - Frank Burkholder for great graphic ideas.
 - Michael Dyer for tech geekery and tech support.
+- Kelly Lutz for hyperlink help on the README
 
 
 Copyright © 2018 Joe Shull
