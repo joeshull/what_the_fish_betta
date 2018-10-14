@@ -11,7 +11,7 @@ An exploration in image classification using Logistic Regression to classify "Fi
 
 
 ## Why The Fish?
-My friend likes to fish the rivers and lakes in Colorado, but often doesn't know what fish he's brought in. He asked for an ML tool that will identify fish species, but this is Capstone 1 so we're starting at the ground floor.
+My friend likes to fish the rivers and lakes in Colorado, but often doesn't know what fish he's brought in. He asked for an ML tool that will identify fish species, but I don't quite have the tools to achieve that yet. I proceed with a "Fish/Non-Fish" classifier.
 
 
 ## How the Fish?
