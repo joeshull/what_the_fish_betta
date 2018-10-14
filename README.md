@@ -79,7 +79,7 @@ I wanted to eliminate color as a variable in order to give the classifier an eas
 	
 	Gray = R * 299/1000 + G * 587/1000 + B * 114/1000
 
-Grayscale makes me smile.
+Grayscale makes me smile. I hope it makes you smile too, because there are a lot of grayscale picture from here out!
 <div align="Center">
     <img src="https://github.com/joeshull/what_the_fish_beta/blob/master/readme_graphics/gray_smile.png" width="300px" height="300px"></img> 
 </div>
